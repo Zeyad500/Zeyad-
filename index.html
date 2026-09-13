@@ -4,26 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Virtual Business Twin</title>
+  <meta name="description" content="Financial decision intelligence and business simulation workspace." />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <div class="app-shell">
+  <section id="welcome" class="welcome-screen">
+    <div class="welcome-orbit orbit-a"></div><div class="welcome-orbit orbit-b"></div>
+    <div class="welcome-card">
+      <div class="welcome-badge">VT</div>
+      <div class="welcome-kicker">DECISION INTELLIGENCE</div>
+      <h1>Meet your financial twin.</h1>
+      <p>Model your current financial state, test decisions before committing real money, stress-test uncertainty, and understand what drives each outcome.</p>
+      <div class="welcome-features">
+        <div><span>01</span><b>Build the twin</b><small>Cash, debt, revenue, savings, costs and investments.</small></div>
+        <div><span>02</span><b>Simulate decisions</b><small>Compare base, upside, downside and stress cases.</small></div>
+        <div><span>03</span><b>Track resilience</b><small>See liquidity, risk, sensitivity and goal impact.</small></div>
+      </div>
+      <div class="welcome-actions"><button id="enterApp" class="primary-btn">Enter workspace <span>→</span></button><button id="openDemo" class="text-btn">Launch demo mode</button></div>
+      <small class="welcome-note">Prototype decision-support system. Outputs are conditional estimates, not guarantees.</small>
+    </div>
+  </section>
+
+  <div id="workspace" class="app-shell hidden">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-mark">VT</div><div><strong>Virtual Twin</strong><span>Financial Decision Intelligence</span></div></div>
+      <div class="brand"><div class="brand-mark">VT</div><div><strong>Virtual Twin</strong><span>Decision intelligence</span></div></div>
       <div class="mode-switch"><button id="businessMode" class="active">Business</button><button id="personalMode">Personal</button></div>
+      <div class="workspace-card"><span class="live-dot"></span><div><b id="workspaceName">Northstar Retail Group</b><small>Financial model synced</small></div></div>
       <nav>
+        <div class="nav-label">ANALYZE</div>
         <button class="nav active" data-view="dashboard">Overview</button>
-        <button class="nav" data-view="simulator">Decision Simulator</button>
-        <button class="nav" data-view="stress">Stress Testing</button>
-        <button class="nav" data-view="whatif">What-If Mode</button>
-        <button class="nav" data-view="goals">Goals</button>
-        <button class="nav" data-view="history">Decision History</button>
-        <button class="nav" data-view="external">External Factors</button>
+        <button class="nav" data-view="simulator">Decision simulator</button>
+        <button class="nav" data-view="stress">Stress testing</button>
+        <button class="nav" data-view="whatif">What-if mode</button>
+        <div class="nav-label">MONITOR</div>
+        <button class="nav" data-view="goals">Financial goals</button>
+        <button class="nav" data-view="history">Decision history</button>
+        <button class="nav" data-view="external">External factors</button>
       </nav>
-      <div class="sidebar-status"><span>Model status</span><strong>Interactive demo engine</strong><small>Client-side deployment build</small></div>
+      <div class="readiness-card"><div><span>Model readiness</span><b>87%</b></div><div class="progress"><i style="width:87%"></i></div><small>Good for scenario analysis. Causal confidence varies by decision.</small></div>
+      <div class="sidebar-foot">Governed workspace <span>v1.0</span></div>
     </aside>
     <main>
-      <header><div><span class="eyebrow">FINANCIAL TWIN</span><h1 id="pageTitle">Financial Overview</h1></div><div class="status-pill">● Model active</div></header>
+      <header class="topbar"><div><span class="eyebrow">FINANCIAL TWIN · LIVE MODEL</span><h1 id="pageTitle">Financial overview</h1></div><div class="header-actions"><span class="status-pill"><i></i> Model active</span><button id="backWelcome" class="ghost-btn">Welcome</button></div></header>
       <div id="app"></div>
     </main>
   </div>
