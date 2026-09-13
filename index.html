@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Virtual Business Twin</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">VT</div><div><strong>Virtual Twin</strong><span>Financial Decision Intelligence</span></div></div>
+      <div class="mode-switch"><button id="businessMode" class="active">Business</button><button id="personalMode">Personal</button></div>
+      <nav>
+        <button class="nav active" data-view="dashboard">Overview</button>
+        <button class="nav" data-view="simulator">Decision Simulator</button>
+        <button class="nav" data-view="stress">Stress Testing</button>
+        <button class="nav" data-view="whatif">What-If Mode</button>
+        <button class="nav" data-view="goals">Goals</button>
+        <button class="nav" data-view="history">Decision History</button>
+        <button class="nav" data-view="external">External Factors</button>
+      </nav>
+      <div class="sidebar-status"><span>Model status</span><strong>Interactive demo engine</strong><small>Client-side deployment build</small></div>
+    </aside>
+    <main>
+      <header><div><span class="eyebrow">FINANCIAL TWIN</span><h1 id="pageTitle">Financial Overview</h1></div><div class="status-pill">● Model active</div></header>
+      <div id="app"></div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
